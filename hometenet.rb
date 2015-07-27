@@ -1,7 +1,6 @@
 Plugin.create(:hometedotnet) do
 	DEFINED_TIME = Time.new.freeze
 	exptmp = nil
-	Plugin.call(:update, nil, [Message.new(:message => "test", :system => true)])
 	on_appear do |ms|
 		ms.each do |m|
 			exptmp = m.message.to_show()
