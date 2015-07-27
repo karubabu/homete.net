@@ -6,7 +6,7 @@ Plugin.create(:hometedotnet) do
 		ms.each do |m|
 			exptmp = m.message.to_show()
 			#TODO:そのツイートした相手が私をフォローしているかを確認する
-			if exptmp =~ /ほめてね/ and m[:created] > DEFINED_TIME and !m.retweet? then
+			if exptmp = /ほめてね/ and m[:created] > DEFINED_TIME and !m.retweet? then
 				Service.primary.post(:message => "#{"@" + m.user.idname + "えらいっ" + "！"*rand(5)}", :replyto => m)
 			end
 		end
